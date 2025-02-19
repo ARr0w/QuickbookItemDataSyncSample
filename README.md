@@ -35,7 +35,7 @@ public class AuthService
 
     // Other authentication logic...
 }
-
+```
 
 ### 🔹 Step 3: Configure the Application  
 Before running the application, update the `appsettings.json` file:  
@@ -45,3 +45,4 @@ Before running the application, update the `appsettings.json` file:
   "CompanyId": "<YOUR_COMPANY_ID>",
   "Code": "<YOUR_AUTHORIZATION_CODE>"
 }
+```
