@@ -7,24 +7,37 @@ This console application integrates with QuickBooks to retrieve inventory data d
 
 ## 📌 How It Works  
 
-### 🔹 Step 1: Obtain the Authorization Code  
-1. **Log in to QuickBooks Developer Portal**  
-   - Open the QuickBooks OAuth Authorization URL.  
-   - Log in using your QuickBooks account.  
+### 🔹 Step 1: Obtain QuickBooks API Credentials  
+Before integrating with QuickBooks, you must create an app in the **QuickBooks Developer Portal** to get the required credentials.  
 
-2. **Select the Company**  
-   - Choose the **Company ID** associated with QuickBooks.  
+#### Steps to Get `Client ID` and `Client Secret`:  
+1. **Go to QuickBooks Developer Portal** → [QuickBooks Developer Dashboard](https://developer.intuit.com/)  
+2. **Log in or Sign up**  
+3. **Create an App** under **My Apps**  
+4. **Select QuickBooks Online & Payments** as the platform  
+5. Navigate to the **Keys & OAuth** section  
+6. Copy your **Client ID** and **Client Secret**  
 
-3. **Authorize the Application**  
-   - Grant access permission to retrieve inventory data.  
-
-4. **Copy the Authorization Code**  
-   - After successful authorization, QuickBooks will provide an **authorization code**.  
-   - Copy this code for use in the next step.  
+> ⚠️ Keep these credentials secure and do not share them.  
 
 ---
 
 ### 🔹 Step 2: Configure the Application  
+
+#### 1️⃣ **Set `Client ID` and `Client Secret` in Code**  
+Modify the `AuthService` class in the source code to include your credentials:  
+
+```csharp
+public class AuthService
+{
+    private readonly string clientId = "<YOUR_CLIENT_ID>";
+    private readonly string clientSecret = "<YOUR_CLIENT_SECRET>";
+
+    // Other authentication logic...
+}
+
+
+### 🔹 Step 3: Configure the Application  
 Before running the application, update the `appsettings.json` file:  
 
 ```json
